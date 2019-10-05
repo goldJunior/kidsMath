@@ -20,6 +20,11 @@ void Question::swapValues() {
 	return;
 }
 
+void Question::changeValues(unsigned int newVarA, unsigned int newVarB) {
+	varA = newVarA;
+	varB = newVarB;
+	return;
+}
 
 Question::~Question() {
 	// TODO Auto-generated destructor stub

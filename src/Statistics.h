@@ -8,6 +8,9 @@
 #ifndef STATISTICS_H_
 #define STATISTICS_H_
 
+#include <time.h>
+
+
 class Statistics {
 public:
 	Statistics();

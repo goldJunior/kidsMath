@@ -18,6 +18,7 @@ public:
 		usrRes = 0;
 	}
 
+	void changeValues(unsigned int newVarA, unsigned int newVarB);
 	virtual void ask() = 0;
 	bool check();
 	int getRes() {return result;}
