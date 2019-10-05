@@ -41,7 +41,7 @@ int main() {
 				if(NG->genUnsignedInt() % 2) {
 					q = new Addition(NG->genUnsignedInt(), NG->genUnsignedInt());
 				} else {
-					q = new Subtraction(NG->genUnsignedInt(), NG->genUnsignedInt());
+					q = new Subtraction(NG->genUnsignedInt(), NG->genUnsignedInt(), (userData->getOrder() == E_Order::LARGE_FIRST));
 				}
 
 				break;

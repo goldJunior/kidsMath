@@ -20,6 +20,7 @@ UserData::UserData() {
 	cin >> userResponse;
 	m_mathType = (E_mathType)userResponse;
 
+
 	if(m_mathType != E_mathType::ADD) {
 		cout << "REGULAR - 0, RANDOM - 1 : " ;
 		cin >> userResponse;
@@ -28,7 +29,6 @@ UserData::UserData() {
 	}
 
 	m_order = (E_Order)userResponse;
-
 }
 
 UserData::~UserData() {

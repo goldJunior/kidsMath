@@ -6,6 +6,7 @@
  */
 
 #include "Question.h"
+#include <iostream>
 
 bool Question::check() {
 	solve();
