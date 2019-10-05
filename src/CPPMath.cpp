@@ -11,6 +11,7 @@
 #include "NumberGenerator.h"
 #include "Addition.h"
 #include "Subtraction.h"
+#include "Multi.h"
 #include "UserData.h"
 #include "Statistics.h"
 
@@ -31,21 +32,32 @@ int main() {
 	{
 
 		switch (userData->getMathType()) {
-			case ADD       :
+		case ADD       :
+			q = new Addition(NG->genUnsignedInt(), NG->genUnsignedInt());
+			break;
+		case SUBTRACT  :
+			q = new Subtraction(NG->genUnsignedInt(), NG->genUnsignedInt(), (userData->getOrder() == E_Order::LARGE_FIRST));
+			break;
+		case MULTIPLY :
+			q = new Multi(NG->genUnsignedInt(), NG->genUnsignedInt());
+			break;
+		case MIXED     :
+			switch (NG->genUnsignedInt() % 3) {
+			case 0:
 				q = new Addition(NG->genUnsignedInt(), NG->genUnsignedInt());
 				break;
-			case SUBTRACT  :
+			case 1:
 				q = new Subtraction(NG->genUnsignedInt(), NG->genUnsignedInt(), (userData->getOrder() == E_Order::LARGE_FIRST));
 				break;
-			case MIXED     :
-				if(NG->genUnsignedInt() % 2) {
-					q = new Addition(NG->genUnsignedInt(), NG->genUnsignedInt());
-				} else {
-					q = new Subtraction(NG->genUnsignedInt(), NG->genUnsignedInt(), (userData->getOrder() == E_Order::LARGE_FIRST));
-				}
-
+			case 2:
+				q = new Multi(NG->genUnsignedInt(), NG->genUnsignedInt());
 				break;
+			}
+			break;
 		}
+
+
+
 
 		q->ask();
 		stat->incrementAnswers();

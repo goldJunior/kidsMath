@@ -8,7 +8,7 @@
 #ifndef USERDATA_H_
 #define USERDATA_H_
 
-enum E_mathType{ ADD = 0, SUBTRACT, MIXED};
+enum E_mathType{ ADD = 0, SUBTRACT,  MULTIPLY, MIXED};
 enum E_Order{ LARGE_FIRST = 0, RANDOM_FIRST};
 
 class UserData {

@@ -16,12 +16,12 @@ UserData::UserData() {
 	cout << "Write your number limit : " ;
 	cin >> m_limit;
 
-	cout << "PLUS - 0, MINUS - 1, MIXED - 2 : " ;
+	cout << "PLUS - 0, MINUS - 1, MULTIPLY - 2, MIXED - 3 : " ;
 	cin >> userResponse;
 	m_mathType = (E_mathType)userResponse;
 
 
-	if(m_mathType != E_mathType::ADD) {
+	if(m_mathType == E_mathType::SUBTRACT || m_mathType == E_mathType::MIXED) {
 		cout << "REGULAR - 0, RANDOM - 1 : " ;
 		cin >> userResponse;
 	} else {
